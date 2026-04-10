@@ -3,8 +3,8 @@ class Kotlineer < Formula
 
   desc "Lightweight Python wrapper around JetBrains kotlin-lsp"
   homepage "https://github.com/romus/kotlineer"
-  url "https://github.com/romus/kotlineer/releases/download/v0.1.0/kotlineer-0.1.0.tar.gz"
-  sha256 "4437878db00d979f8710677a8464d440d741d05be913ed506bff61a4b8bd06aa"
+  url "https://github.com/romus/kotlineer/releases/download/v0.2.0/kotlineer-0.2.0.tar.gz"
+  sha256 "3f7360577e1115b3114fe83087784ab5e725cb03c7606bd811f5b35b795a883e"
 
   depends_on "python@3.14"
 
@@ -13,6 +13,7 @@ class Kotlineer < Formula
   end
 
   test do
-    assert_match "0.1.0", shell_output("#{bin}/kotlineer --version")
+    assert_match "0.2.0", shell_output("#{bin}/kotlineer --version")
+    assert_predicate bin/"kotlineer-mcp", :exist?
   end
 end
